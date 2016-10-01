@@ -10,6 +10,9 @@ sudo adduser deploy sudo
 sudo passwd deploy
 sudo sed -i 's/PermitRootLogin yes/PermitRootLogin without-password/g' /etc/ssh/sshd_config
 sudo apt-get install -y zsh
+sh -c \"\$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\"
+chsh -s \$(which zsh)
+sed -i 's/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"agnoster\"/g' ~/.zshrc
 "
 
 deploysetup="
